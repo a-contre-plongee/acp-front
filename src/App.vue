@@ -50,7 +50,8 @@ body {
     >
       <v-list dense>
         <navigation-link title="Network" icon="device_hub" path="/"/>
-        <navigation-link v-for="(device) in devices" :icon="device.type | deviceTypeIcon" :title="device.name" :path="device.path()"/>
+        <!-- <navigation-link v-for="(device) in devices" :icon="device.type | deviceTypeIcon" :title="device.name" :path="device.path()"/> -->
+        <navigation-link title="CCU" icon="camera" path="/ccu"/>
         <navigation-link title="Rec control" icon="camera" path="/rec/control"/>
         <v-spacer/>
         <navigation-link title="Configuration" icon="settings" path="/config" />

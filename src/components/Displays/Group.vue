@@ -1,6 +1,21 @@
 <script>
 export default {
-  props: ['title', 'fill-height', 'fill-width'],
+  props: {
+    title: { type: String },
+    'fill-height': {type: Boolean},
+    'fill-width': {type: Boolean},
+    'bg': {type: String, default: ""},
+  },
+  computed: {
+    containerClasses() {
+      let result = this.bg
+      console.log(this)
+      if(this.fillWidth) {
+        result += " fill-width"
+      }
+      return result
+    }
+  }
 }
 
 </script>
@@ -28,11 +43,10 @@ export default {
 .fill-height {
   height: 100%;
 }
-
 </style>
 
 <template>
-  <div class="grp-container" v-bind:class="{ 'fill-width': 'fill-width' }">
+  <div class="grp-container" :class="containerClasses">
     <div class="grp-title"> {{title}} </div>
     <div class="grp-content" v-bind:class="{ 'fill-height': 'fill-height' }">
       <slot> </slot>

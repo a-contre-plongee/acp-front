@@ -67,6 +67,16 @@ Vue.component('device-atem', DeviceAtem)
 Vue.component('device-jvc-hm-660', DeviceJVCHM660)
 Vue.component('device-tally-rec', DeviceTallyRecorder)
 
+// CCU Stuff
+
+import CCU from './components/CCU/Main.vue'
+import SingleCCU from './components/CCU/Single.vue'
+import OverviewCCU from './components/CCU/Overview.vue'
+
+Vue.component('ccu', CCU)
+Vue.component('ccu-single', SingleCCU)
+Vue.component('ccu-overview', OverviewCCU)
+
 
 // Form validation
 import VeeValidate from 'vee-validate'
