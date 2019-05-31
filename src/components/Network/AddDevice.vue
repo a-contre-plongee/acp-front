@@ -14,8 +14,9 @@
       </v-list>
     </v-menu>
     <network-add-device-modal
-      v-bind:device-type="currentDeviceType"
-      v-bind:activated="showModal"
+      :v-if="showModal"
+      :device-type="currentDeviceType"
+      :activated="showModal"
       v-on:close="closeModal"
       v-on:add-device="addDevice"
       />
@@ -38,7 +39,10 @@ export default {
   filters: deviceFilters,
   methods: {
     // This is called when a device type has been choosed from the bottom sheet
-    chooseDeviceType(device) {
+    async chooseDeviceType(device) {
+      // Reset device form
+      this.currentDeviceType = null
+      await this.$nextTick()
       this.currentDeviceType = device
       this.showModal = true
     },

@@ -51,6 +51,18 @@ export default class DeviceClient {
     })
   }
 
+  typeParams(name) {
+    return new Promise((resolve, reject) => {
+      axios.get(`${this._url}/api/device_types/${name}/params`)
+        .then((response) => {
+          resolve(response.data)
+        })
+        .catch((error) => {
+          reject(cleanError(error))
+        })
+    })
+  }
+
   create(name, type, params) {
     return new Promise((resolve, reject) => {
       axios.post(`${this._url}/api/devices`, {

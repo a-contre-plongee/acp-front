@@ -35,18 +35,6 @@ Vue.component('network-add-device', NetworkAddDevice)
 Vue.component('network-add-device-modal', NetworkAddDeviceModal)
 Vue.component('network-remove-device', NetworkRemoveDevice)
 
-// Network Forms
-import NetworkFormAtem from './components/Network/forms/Atem.vue'
-import NetworkFormJVCHM660 from './components/Network/forms/JVCHM660.vue'
-import NetworkFormTallyRasp from './components/Network/forms/TallyRasp.vue'
-import NetworkFormTallyRecorder from './components/Network/forms/TallyRecorder.vue'
-import NetworkFormSmartViewDuo from './components/Network/forms/SmartViewDuo.vue'
-Vue.component('network-form-atem', NetworkFormAtem)
-Vue.component('network-form-jvc-hm-660', NetworkFormJVCHM660)
-Vue.component('network-form-tally-rasp', NetworkFormTallyRasp)
-Vue.component('network-form-tally-rec', NetworkFormTallyRecorder)
-Vue.component('network-form-smartview-duo', NetworkFormSmartViewDuo)
-
 // Config
 import ServerConfig from './components/Config/Server.vue'
 Vue.component('config-server', ServerConfig)
