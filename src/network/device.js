@@ -15,6 +15,9 @@ export class DeviceManager {
     let device = await client.devices.get(id)
 
     let height = Math.max(device.input_ports.length, device.output_ports.length) * 20;
+    if(height == 0) {
+      height = 20
+    }
     let position = null
     if(device.display_opts) {
       position = device.display_opts["position"]
