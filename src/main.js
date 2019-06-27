@@ -50,13 +50,19 @@ Vue.component('rec-status', RecStatus)
 // Devices
 import DeviceAtem from './components/Devices/Atem.vue'
 import DeviceJVCHM660 from './components/Devices/JVCHM660.vue'
+import DeviceJVCRemote from './components/Devices/JVCRemote.vue'
 import DeviceTallyRecorder from './components/Devices/TallyRecorder.vue'
 Vue.component('device-atem', DeviceAtem)
 Vue.component('device-jvc-hm-660', DeviceJVCHM660)
+Vue.component('device-jvc-remote', DeviceJVCRemote)
 Vue.component('device-tally-rec', DeviceTallyRecorder)
 
-// CCU Stuff
+// Remote
 
+import JVCRemoteInput from './components/Remote/JVCInput.vue'
+Vue.component('jvc-remote-input', JVCRemoteInput)
+
+// CCU Stuff
 import CCU from './components/CCU/Main.vue'
 import SingleCCU from './components/CCU/Single.vue'
 import OverviewCCU from './components/CCU/Overview.vue'

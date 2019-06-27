@@ -17,6 +17,15 @@ export default {
     // Load configuration from localStorage
     this.$store.dispatch('config/load')
   },
+  methods: {
+    showDevice(device) {
+      switch(device.type) {
+        case "JVC_REMOTE":
+          return true
+      }
+      return false
+    }
+  },
   filters: deviceFilters,
 }
 </script>
@@ -50,7 +59,7 @@ body {
     >
       <v-list dense>
         <navigation-link title="Network" icon="device_hub" path="/"/>
-        <navigation-link v-for="(device) in devices" :icon="device.type | deviceTypeIcon" :title="device.name" :path="device.path()"/>
+        <navigation-link v-for="(device) in devices" :icon="device.type | deviceTypeIcon" :title="device.name" :path="device.path()" v-if="showDevice(device)"/>
         <navigation-link title="CCU" icon="camera" path="/ccu"/>
         <navigation-link title="Rec control" icon="camera" path="/rec/control"/>
         <v-spacer/>

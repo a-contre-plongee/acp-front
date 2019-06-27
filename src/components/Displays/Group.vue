@@ -9,7 +9,6 @@ export default {
   computed: {
     containerClasses() {
       let result = this.bg
-      console.log(this)
       if(this.fillWidth) {
         result += " fill-width"
       }

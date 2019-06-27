@@ -48,7 +48,6 @@ export default {
       let client = this.$store.state.config.apiClient
       try {
         this.results = await client.tally_recorder.search(this.deviceId)
-        console.log(this.results)
       } catch(error) {
         this.error = error
         console.log(error)

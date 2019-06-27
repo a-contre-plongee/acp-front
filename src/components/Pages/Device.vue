@@ -16,14 +16,13 @@ export default {
   },
   methods: {
     // Reset all values to their default and load a new device.
-    resetComponent() {
+    async resetComponent() {
       this.device = null;
       let client = this.$store.state.config.apiClient
-      if(client == null) return
-      client.devices.get(this.$route.params.id)
-        .then((device) => {
-          this.device = device
-        })
+      if(client == null) {
+        return
+      }
+      this.device = await client.devices.get(this.$route.params.id)
     }
   },
 
@@ -33,6 +32,18 @@ export default {
     }
   },
   computed: {
+    showToolbar() {
+      if(this.device == null) {
+        return false
+      }
+
+      switch(this.device.type) {
+        case "JVC_REMOTE":
+          return false
+      }
+
+      return true
+    },
     deviceComponent() {
       // Dynamically load the component name from the device type.
       let deviceType = this.device.type.toLowerCase();
@@ -54,7 +65,7 @@ p {
 <template>
   <v-layout fill-height align-center justify-center>
     <v-layout v-if="device" align-center justify-start column fill-height>
-      <v-toolbar dense class="mb-4">
+      <v-toolbar dense class="mb-4" v-if="showToolbar">
         <v-toolbar-title> Device {{device.name}}</v-toolbar-title>
         <v-spacer/>
           <p class="mr-2"> IP: {{device.ip}}</p>
