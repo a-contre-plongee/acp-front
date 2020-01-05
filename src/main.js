@@ -89,6 +89,10 @@ Vue.component('ptz-positions', PtzPositions)
 Vue.component('ptz-edit', PtzEdit)
 Vue.component('ptz-form', PtzForm)
 
+// Switcher
+import Switcher from './components/Switcher/Switcher.vue'
+Vue.component('switcher', Switcher)
+
 // Form validation
 import VeeValidate from 'vee-validate'
 Vue.use(VeeValidate)

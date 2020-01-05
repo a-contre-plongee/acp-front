@@ -44,6 +44,7 @@ export default {
   cursor: pointer;
   z-index: 2;
   position: absolute;
+  word-wrap: anywhere;
 }
 
 .atem.btn .btn.red{

@@ -3,6 +3,7 @@ import LinkClient from './links'
 import TallyRecorderClient from './tally_recorder'
 import JVCClient from './jvc'
 import PTZClient from './ptz'
+import SwitcherClient from './switcher'
 
 import axios from 'axios'
 
@@ -26,6 +27,9 @@ export default class Client {
 
     // Init the PTZ client
     this.ptz = new PTZClient(this._url)
+
+    // Init the Switcher client
+    this.switcher = new SwitcherClient(this._url)
   }
 
   // Ping method: used to check connection between the client and the API server

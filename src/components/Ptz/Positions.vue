@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     async positionClicked(id) {
-      console.log(id)
       let pos = this.$store.getters['ptzpositions/find'](this.device.id, id)
       if(!pos) {
         return

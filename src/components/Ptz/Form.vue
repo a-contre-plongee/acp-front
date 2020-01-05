@@ -76,16 +76,12 @@ export default {
     }
   },
   mounted() {
-    if(!this.pos) {
-      return
-    }
-    this.pan = this.pos.pan
-    this.tilt = this.pos.tilt
-    this.zoom = this.pos.zoom
-    this.name = this.pos.name
-
+    this.copyPosParams()
   },
   watch: {
+    pos: function() {
+      this.copyPosParams()
+    },
     name: function() {
       this.onInputChanged()
     },
@@ -100,6 +96,16 @@ export default {
     }
   },
   methods: {
+    copyPosParams() {
+      if(!this.pos) {
+        return
+      }
+      this.pan = this.pos.pan
+      this.tilt = this.pos.tilt
+      this.zoom = this.pos.zoom
+      this.name = this.pos.name
+      this.onInputChanged()
+    },
     previewPosition() {
       this.$store.state.config.apiClient.ptz.position(this.device.id, {
         pan: this.pan,
