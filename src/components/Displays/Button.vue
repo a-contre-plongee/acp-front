@@ -6,6 +6,7 @@ export default {
     red: Boolean,
     green: Boolean,
     yellow: Boolean,
+    big: Boolean,
   },
   computed: {
     btnClass(){
@@ -13,10 +14,10 @@ export default {
       for(let color in colors){
         color = colors[color];
         if(this[color]){
-          return color;
+          return color
         }
       }
-      return 'empty'
+      return 'empty';
     }
   },
   methods: {
@@ -92,10 +93,26 @@ export default {
   height: 50px;
   width: 50px;
 }
+
+.atem.btn.big {
+  height: 65px;
+  width: 65px;
+}
+
+.atem.btn.big .btn-shadow {
+  height: 60px;
+  width: 60px;
+}
+
+.atem.btn.big .btn {
+  height: 65px;
+  width: 65px;
+
+}
 </style>
 
 <template>
-  <div class="atem btn" @click="clicked()">
+  <div class="atem btn" v-bind:class="{big}" @click="clicked()">
     <div v-bind:class="btnClass" class="btn-shadow" />
     <div v-bind:class="btnClass" class="btn">
       <div class="label">

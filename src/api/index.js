@@ -2,6 +2,7 @@ import DeviceClient from './devices'
 import LinkClient from './links'
 import TallyRecorderClient from './tally_recorder'
 import JVCClient from './jvc'
+import PTZClient from './ptz'
 
 import axios from 'axios'
 
@@ -22,6 +23,9 @@ export default class Client {
 
     // Init the JVC client
     this.jvc = new JVCClient(this._url)
+
+    // Init the PTZ client
+    this.ptz = new PTZClient(this._url)
   }
 
   // Ping method: used to check connection between the client and the API server

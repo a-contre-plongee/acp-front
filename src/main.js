@@ -71,6 +71,23 @@ Vue.component('ccu', CCU)
 Vue.component('ccu-single', SingleCCU)
 Vue.component('ccu-overview', OverviewCCU)
 
+import Pad from './components/Gamepads/Pad'
+Vue.component('pad', Pad)
+
+// PTZ
+import PtzAddPosition from './components/Ptz/AddPosition.vue'
+import PtzEditPosition from './components/Ptz/EditPosition.vue'
+import PtzDeletePosition from './components/Ptz/DeletePosition.vue'
+import PtzPositions from './components/Ptz/Positions.vue'
+import PtzEdit from './components/Ptz/Edit.vue'
+import PtzForm from './components/Ptz/Form.vue'
+
+Vue.component('ptz-add-position', PtzAddPosition)
+Vue.component('ptz-edit-position', PtzEditPosition)
+Vue.component('ptz-delete-position', PtzDeletePosition)
+Vue.component('ptz-positions', PtzPositions)
+Vue.component('ptz-edit', PtzEdit)
+Vue.component('ptz-form', PtzForm)
 
 // Form validation
 import VeeValidate from 'vee-validate'

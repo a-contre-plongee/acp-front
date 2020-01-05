@@ -62,6 +62,8 @@ body {
         <navigation-link v-for="(device) in devices" :icon="device.type | deviceTypeIcon" :title="device.name" :path="device.path()" v-if="showDevice(device)"/>
         <navigation-link title="CCU" icon="camera" path="/ccu"/>
         <navigation-link title="Rec control" icon="camera" path="/rec/control"/>
+        <navigation-link title="PTZ Control" icon="gamepad" path="/cam/control"/>
+        <navigation-link title="Cockpit" icon="gamepad" path="/cockpit"/>
         <v-spacer/>
         <navigation-link title="Configuration" icon="settings" path="/config" />
       </v-list>
